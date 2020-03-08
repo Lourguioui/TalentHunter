@@ -49,7 +49,7 @@ export default class UserInput extends Component {
                     entry='top'
                     position='center'
                     startOpen= {this.state.isTopOpen}
-                    backdropOpacity= {0}
+                    backdropOpacity= {0.5}
                     onOpened={() => {this.setState({isTopOpen: true})}}
                     onClosed={() => {this.setState({isTopOpen: false})}}
                     >
@@ -111,7 +111,7 @@ export default class UserInput extends Component {
                 </ImageBackground>
                 </View>
                 <TouchableOpacity style={styles.closeButton} onPress={()=> this.refs.modalTop.close()}>
-                    <Text style={{fontSize: 35, color: "#00000080"}}>×</Text>
+                    <Text style={{fontSize: 32, color: "#00000080", textAlign: "center"}}>×</Text>
                 </TouchableOpacity>
             </Modal>
             
@@ -161,8 +161,8 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         backgroundColor: '#fff',
-        width: 25,
-        height: 25,
+        width: 50,
+        height: 50,
         borderRadius: 25,
         borderWidth: 0,
         justifyContent: "center",
