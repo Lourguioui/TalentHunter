@@ -1,11 +1,21 @@
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import SearchBar from './components/SearchBar';
 
+import HomeScreen from './screens/HomeScreen';
+import SettingsScreen from './screens/SettingsScreen'
+import LinksScreen from './screens/LinksScreen';
+import Stared from './screens/Stared';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AppNavigator from './navigation/AppNavigator';
+import AppBar from './components/AppBar';
+
+
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -22,8 +32,80 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+      
+        <AppBar />
+
+
+
+        {/* <NavigationContainer>
+         <TabNavigator.Navigator
+          tabBarOptions={{
+            style:{
+                  backgroundColor:'transparent',
+                  borderColor:'#fff',
+                  borderTopColor:'#fff',
+                  elevation:0
+            }
+          }}
+         >
+           <TabNavigator.Screen
+                name='HomeScreen'
+                component={HomeScreen}
+                options={{
+                  tabBarIcon: () => (
+                    <Image
+                      source={require('./assets/images/icon1.png')}
+                      style={{}}
+                    />
+                  )
+                }}
+            />
+           <TabNavigator.Screen
+                name=' '
+                component={Stared}
+                options={{
+                  tabBarIcon: () => (
+                    <Image
+                      source={require('./assets/images/icon1.png')}
+                      style={{}}
+                    />
+                  )
+                }}
+            />
+
+            
+             <TabNavigator.Screen
+                name='SettingsScreen   '
+                component={SettingsScreen}
+                options={{
+                  tabBarIcon: () => (
+                    <Image
+                      source={require('./assets/images/icon1.png')}
+                      style={{}}
+                    />
+                  )
+                }}
+            />
+             <TabNavigator.Screen
+                name = '  '
+                component={LinksScreen}
+                options={{
+                  tabBarIcon: ({ tintColor }) => (
+                    <Image
+                      source={require('./assets/images/exams.png')}
+                      style={{}}
+                    />
+                  )
+                }}
+            />
+             
+            
+         </TabNavigator.Navigator>
+         </NavigationContainer>
+           */}
+
       </View>
+
     );
   }
 }
@@ -56,6 +138,7 @@ function handleFinishLoading(setLoadingComplete) {
 
 const styles = StyleSheet.create({
   container: {
+
     flex: 1,
     backgroundColor: '#fff',
   },
