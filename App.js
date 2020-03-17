@@ -3,10 +3,10 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Platform, StatusBar, StyleSheet, View, Image } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import SearchBar from './components/SearchBar';
-
+import FloattingActionButton from './components/FloattingActionButton';
 import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen'
 import LinksScreen from './screens/LinksScreen';
@@ -32,9 +32,25 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-      
+        <FloattingActionButton />
         <AppBar />
-
+        {/* <TouchableOpacity
+          style={{
+            borderWidth: 1,
+            borderColor: 'rgba(0,0,0,0.2)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 70,
+            position: 'absolute',
+            bottom: 10,
+            right: 10,
+            height: 70,
+            backgroundColor: '#fff',
+            borderRadius: 100,
+          }}
+        >
+          <Icon name="plus" size={30} color="#01a699" />
+        </TouchableOpacity> */}
 
 
         {/* <NavigationContainer>
