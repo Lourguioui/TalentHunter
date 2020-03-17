@@ -1,15 +1,22 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet,Image, View} from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import SearchBar from "../components/SearchBar";
 
 export default function LinksScreen() {
   
   return (
-    <SearchBar>
-        
-    </SearchBar>
     
+      <>
+        <SearchBar />
+        <Image
+            style={{zIndex:3,position:'absolute',bottom:-50,left:-27}}
+            source={require('../assets/images/bottom_bar_background.png')}
+
+          />
+      </>   
+       
+      
   );
 }
 

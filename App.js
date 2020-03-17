@@ -1,11 +1,21 @@
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
+import SearchBar from './components/SearchBar';
+import FloattingActionButton from './components/FloattingActionButton';
+import HomeScreen from './screens/HomeScreen';
+import SettingsScreen from './screens/SettingsScreen'
+import LinksScreen from './screens/LinksScreen';
+import Stared from './screens/Stared';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AppNavigator from './navigation/AppNavigator';
+import AppBar from './components/AppBar';
+
+
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -22,8 +32,13 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+       
+        <AppBar />
+        <FloattingActionButton />
+        
+
       </View>
+
     );
   }
 }
@@ -56,6 +71,7 @@ function handleFinishLoading(setLoadingComplete) {
 
 const styles = StyleSheet.create({
   container: {
+   
     flex: 1,
     backgroundColor: '#fff',
   },

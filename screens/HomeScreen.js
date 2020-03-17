@@ -17,12 +17,18 @@ import ProfileCard from '../components/profileCard/ProfileCard';
 export default function HomeScreen() {
   return (
     <View>
-      <SearchBar/>
+      
       <ScrollView>
         <ProfileCard/>
         <ProfileCard/>
         <ProfileCard/>
       </ScrollView>
+      <SearchBar />
+      <Image
+            style={{zIndex:3,position:'absolute',bottom:-50,left:-27}}
+            source={require('../assets/images/bottom_bar_background.png')}
+
+          />
     </View>
     
   );
