@@ -32,93 +32,10 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <FloattingActionButton />
+       
         <AppBar />
-        {/* <TouchableOpacity
-          style={{
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,0.2)',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 70,
-            position: 'absolute',
-            bottom: 10,
-            right: 10,
-            height: 70,
-            backgroundColor: '#fff',
-            borderRadius: 100,
-          }}
-        >
-          <Icon name="plus" size={30} color="#01a699" />
-        </TouchableOpacity> */}
-
-
-        {/* <NavigationContainer>
-         <TabNavigator.Navigator
-          tabBarOptions={{
-            style:{
-                  backgroundColor:'transparent',
-                  borderColor:'#fff',
-                  borderTopColor:'#fff',
-                  elevation:0
-            }
-          }}
-         >
-           <TabNavigator.Screen
-                name='HomeScreen'
-                component={HomeScreen}
-                options={{
-                  tabBarIcon: () => (
-                    <Image
-                      source={require('./assets/images/icon1.png')}
-                      style={{}}
-                    />
-                  )
-                }}
-            />
-           <TabNavigator.Screen
-                name=' '
-                component={Stared}
-                options={{
-                  tabBarIcon: () => (
-                    <Image
-                      source={require('./assets/images/icon1.png')}
-                      style={{}}
-                    />
-                  )
-                }}
-            />
-
-            
-             <TabNavigator.Screen
-                name='SettingsScreen   '
-                component={SettingsScreen}
-                options={{
-                  tabBarIcon: () => (
-                    <Image
-                      source={require('./assets/images/icon1.png')}
-                      style={{}}
-                    />
-                  )
-                }}
-            />
-             <TabNavigator.Screen
-                name = '  '
-                component={LinksScreen}
-                options={{
-                  tabBarIcon: ({ tintColor }) => (
-                    <Image
-                      source={require('./assets/images/exams.png')}
-                      style={{}}
-                    />
-                  )
-                }}
-            />
-             
-            
-         </TabNavigator.Navigator>
-         </NavigationContainer>
-           */}
+        <FloattingActionButton />
+        
 
       </View>
 
@@ -154,7 +71,7 @@ function handleFinishLoading(setLoadingComplete) {
 
 const styles = StyleSheet.create({
   container: {
-
+   
     flex: 1,
     backgroundColor: '#fff',
   },
