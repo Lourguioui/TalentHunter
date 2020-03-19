@@ -7,8 +7,10 @@ import SettingsScreen from '../screens/SettingsScreen'
 import LinksScreen from '../screens/LinksScreen';
 import Stared from '../screens/Stared';
 import { Image } from 'react-native';
-const Tab = createMaterialBottomTabNavigator();
 
+
+
+const Tab = createMaterialBottomTabNavigator();
 export default function AppBar() {
     return (
         <NavigationContainer>

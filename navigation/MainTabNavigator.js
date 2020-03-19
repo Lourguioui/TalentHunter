@@ -21,20 +21,9 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
   },
-  defaultNavigationOptions = {
-    headerStyle: {
-      backgroundColor: '#0091EA',
-    },
-    style: {
-        backgroundColor:'#000'
-    },
-    headerTintColor: '#fff',
-    title: 'Home Tab',
-   
-  },
+ 
   config
 );
-
 HomeStack.navigationOptions = {
   tabBarLabel: ' ',
   
