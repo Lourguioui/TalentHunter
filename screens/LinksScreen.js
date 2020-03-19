@@ -10,12 +10,11 @@ export default function LinksScreen() {
       <>
         <SearchBar />
         <Image
-            style={{zIndex:3,position:'absolute',bottom:-50,left:-27}}
+            style={styles.tabBarStyle}
             source={require('../assets/images/bottom_bar_background.png')}
 
           />
       </>   
-       
       
   );
 }
@@ -27,7 +26,13 @@ LinksScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
     backgroundColor: '#fff',
   },
+  tabBarStyle : {
+    zIndex:3,
+      position:'absolute',
+      bottom:"-6%",
+      alignSelf: 'center',
+      width: '120%',
+  }
 });
