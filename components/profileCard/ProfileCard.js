@@ -14,13 +14,13 @@ export default class ProfileCard extends Component {
         return (
             <View style={styles.container}> 
                 <View style={styles.rowContainer}>
-                    <View style={{ flex: 6}}>
+                    <View style={styles.leftStyle}>
                         <Image
-                            style={styles.profilImageStyle}
+                            style={styles.imageStyle}
                             source={require('../../assets/images/hamou.jpg')}
                         />
                     </View>
-                    <View style={styles.infoStyle}>
+                    <View style={styles.rightStyle}>
                         <View style={styles.startStyle}>
                             <TouchableOpacity>
                                 <Image
@@ -29,46 +29,48 @@ export default class ProfileCard extends Component {
                                     />
                             </TouchableOpacity>
                         </View> 
-                        <View style={{flexDirection: 'row'}}>
-                            <Image
-                            style={styles.iconStyle}
-                            source={require('../../assets/images/person.png')}
-                            />
-                            <Text style={{fontWeight: 'bold'}}>
-                                Hamou Ait 
-                            </Text>
-                        </View>
-                        <View style={{flexDirection: 'row'}}>
-                            <Image
-                            style={styles.iconStyle}
-                            source={require('../../assets/images/search.png')}
-                            />
-                            <Text style={styles.participantInfo}>
-                                Developpeur Full Stack
-                            </Text>
-                        </View>
-                        <View style={{flexDirection: 'row'}}>
-                            <Image
-                            style={styles.iconStyleModified}
-                            source={require('../../assets/images/profession.jpeg')}
-                            />
-                            <Text style={styles.participantInfo}>
-                                Etudiant
-                            </Text>  
-                        </View>
-                        <View style={{flexDirection: 'row'}}>
-                            <Image
-                            style={styles.iconStyleModified}
-                            source={require('../../assets/images/building.png')}
-                            />
-                            <Text style={styles.participantInfo}>
-                                Ecole nationale superieure d'informatique Alger
-                            </Text>
+                        <View style={styles.infoStyle}>
+                            <View style={styles.infoTextStyle}>
+                                <Image
+                                style={styles.iconStyle}
+                                source={require('../../assets/images/person.png')}
+                                />
+                                <Text style={styles.infoTextStyle}>
+                                    Hamou Ait 
+                                </Text>
+                            </View>
+                            <View style={styles.infoTextStyle}>
+                                <Image
+                                style={styles.iconStyle}
+                                source={require('../../assets/images/search.png')}
+                                />
+                                <Text style={styles.participantInfo}>
+                                    Developpeur Full Stack
+                                </Text>
+                            </View>
+                            <View style={styles.infoTextStyle}>
+                                <Image
+                                style={styles.iconStyleModified}
+                                source={require('../../assets/images/profession.jpeg')}
+                                />
+                                <Text style={styles.participantInfo}>
+                                    Etudiant
+                                </Text>  
+                            </View>
+                            <View style={styles.infoTextStyle}>
+                                <Image
+                                    style={styles.iconStyleModified}
+                                    source={require('../../assets/images/building.png')}
+                                    />
+                                <Text style={styles.participantInfo}>
+                                    ESI
+                                </Text>
                         </View> 
+                        </View>
                     </View>
                 </View>
                 <View style={styles.inputStyle}>
-                    <TextInput                         
+                    <TextInput                          
                         placeholder = 'Description'>                        
                     </TextInput>
                 </View>        
@@ -82,7 +84,6 @@ export default class ProfileCard extends Component {
 const styles = StyleSheet.create({
     container: { 
         margin: 20, 
-        padding: 5,
         borderColor: "black",
         shadowColor: "#000",
         shadowOffset:
@@ -93,58 +94,70 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 4,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        height: 350
     },
     rowContainer: {
         flexDirection: 'row',
-        padding: 20,
+        paddingRight: '8%',
+        paddingLeft: '8%',
+        flex: 2
     },
     inputStyle: { 
-        height: 120, 
         borderColor: 'gray',
         padding: 10,
         borderWidth: 0.5,
         borderRadius: 15,
-        marginTop: 5,
-        marginBottom: 30,
-        marginRight: 30,
-        marginLeft: 30,
+        margin: '8%',
         flexDirection: 'row',
         alignItems: 'flex-start',
+        flex: 1,
+        marginTop: 0,
+    },
+    infoStyle: {
+        flexDirection: 'column',
+        marginLeft: '8%',
+        flex: 1,
+        justifyContent: 'center',
     },
     participantInfo: {
-        color: 'gray'
+        color: 'gray',   
     },
-    profilImageStyle: { 
+    imageStyle: { 
         borderWidth: 1, 
         borderColor: '#d6d7da', 
         borderRadius: 100, 
-        width: 140, 
-        height: 140, 
+        width: '100%',
+        height: undefined,
+        aspectRatio: 1,
     },
     startStyle: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        marginTop : -20,
-        marginRight: -10,
-        marginBottom: 40
     },
     iconStyle: {
         width: 20, 
         height: 20
     },
-    infoStyle:{
+    rightStyle:{
+        flex: 9,
+        marginTop: 10
+    },
+    leftStyle: {
         flex: 7,
-        marginTop: 10,
+        justifyContent: 'center',
     },
     iconStyleModified: {
         width: 15, 
         height: 15,
-        marginRight: 5
     },
     iconStyleRight: {
         width: 25,
         height: 25,
         right: 0
     },
+    infoTextStyle:{
+        flexDirection: 'row',
+        width: '100%',
+    }
   });

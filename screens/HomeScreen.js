@@ -16,7 +16,7 @@ import ProfileCard from '../components/profileCard/ProfileCard';
 
 export default function HomeScreen() {
   return (
-    <View>
+    <View style = {styles.container}>
       
       <ScrollView>
         <ProfileCard/>
@@ -25,7 +25,7 @@ export default function HomeScreen() {
       </ScrollView>
       <SearchBar />
       <Image
-            style={{zIndex:3,position:'absolute',bottom:-50,left:-27}}
+            style={styles.tabBarStyle}
             source={require('../assets/images/bottom_bar_background.png')}
 
           />
@@ -36,17 +36,15 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
     container: {
-      borderWidth: 1,
-      borderColor: '#d6d7da',
-      borderRadius: 10,
-      flex: 3
+      flex: 1,
+      flexDirection: 'column'
     },
-    rowContainer: {
-      flexDirection: 'row',
-      padding: 20
-    },
-    participantInfo: {
-      color: 'gray'
+    tabBarStyle: {
+      zIndex:3,
+      position:'absolute',
+      bottom:"-6%",
+      alignSelf: 'center',
+      width: '120%',
     }
   });
 

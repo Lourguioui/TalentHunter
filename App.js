@@ -32,9 +32,13 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-       
+
+        
+
+        <FloattingActionButton style={styles.buttonStyle} />
+
         <AppBar />
-        <FloattingActionButton />
+
         
 
       </View>
@@ -71,8 +75,18 @@ function handleFinishLoading(setLoadingComplete) {
 
 const styles = StyleSheet.create({
   container: {
-   
     flex: 1,
     backgroundColor: '#fff',
   },
+  buttonStyle :{
+    //width: '100%',
+    // flex: 1,
+    // position: 'absolute',
+    // bottom: 100,
+    // height: 60,
+    // zIndex: 30,
+    // elevation: 30,
+    // alignSelf: 'center'
+
+  }
 });

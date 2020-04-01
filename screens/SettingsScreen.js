@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import Profil from '../components/Profil';
-import {View,Image} from 'react-native';
+import {View,Image, StyleSheet} from 'react-native';
 
 
 export default function SettingsScreen() {
@@ -14,7 +14,7 @@ export default function SettingsScreen() {
        
         <Profil />
         <Image
-            style={{zIndex:3,position:'absolute',bottom:-50,left:-27}}
+            style={styles.tabBarStyles}
             source={require('../assets/images/bottom_bar_background.png')}
 
           />
@@ -25,3 +25,13 @@ export default function SettingsScreen() {
 SettingsScreen.navigationOptions = {
   title: 'app.json',
 };
+
+const styles = StyleSheet.create({
+  tabBarStyles : {
+    zIndex:3,
+      position:'absolute',
+      bottom:"-6%",
+      alignSelf: 'center',
+      width: '120%',
+  }
+})
