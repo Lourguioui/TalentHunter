@@ -5,11 +5,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 
 
-export default function FloattingActionButton() {
+export default function FloattingActionButton({navigation}) {
     return (
         <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => this.props.navigation.navigate('QrCodeScanner')}
+            onPress={() => navigation.navigate('QrCodeScanner')}
         >
             <LinearGradient start={{x: 0, y: 0.75}} end={{x: 1, y: 0.25}}  colors={['#5F1F5F','#7E1F65','#A9206D']} style={styles.gradient} >
                 <Image source={require("../assets/images/Qr.png")} />
