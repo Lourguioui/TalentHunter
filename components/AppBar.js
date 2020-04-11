@@ -9,11 +9,11 @@ import Stared from '../screens/Stared';
 import { Image } from 'react-native';
 
 
-
+    
 const Tab = createMaterialBottomTabNavigator();
 export default function AppBar() {
     return (
-        <NavigationContainer>
+       
             <Tab.Navigator
                 initialRouteName="Notifications"
                 activeColor="#e91e63"
@@ -102,7 +102,7 @@ export default function AppBar() {
                 />
 
             </Tab.Navigator>
-        </NavigationContainer>
+       
 
     );
 }

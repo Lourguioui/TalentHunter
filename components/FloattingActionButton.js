@@ -9,6 +9,7 @@ export default function FloattingActionButton() {
     return (
         <TouchableOpacity
             style={styles.buttonStyle}
+            onPress={() => this.props.navigation.navigate('QrCodeScanner')}
         >
             <LinearGradient start={{x: 0, y: 0.75}} end={{x: 1, y: 0.25}}  colors={['#5F1F5F','#7E1F65','#A9206D']} style={styles.gradient} >
                 <Image source={require("../assets/images/Qr.png")} />
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems:'center',
-      borderRadius:200,
+      borderRadius:50,
       width:'100%',
       height:'100%'
     },
@@ -42,11 +43,11 @@ const styles = StyleSheet.create({
         borderColor: 'rgba(0,0,0,0.2)',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 100,
+        borderRadius: 50,
         width: "15%",
         position: 'absolute',
-        bottom: "5%",
-        height: "7%",
+        bottom: "8%",
+        height : '8%',
         zIndex: 1,
         elevation:1,
         alignSelf: 'center'

@@ -11,9 +11,29 @@ import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen'
 import LinksScreen from './screens/LinksScreen';
 import Stared from './screens/Stared';
+
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AppNavigator from './navigation/AppNavigator';
+import AppContainer from './components/AppContainer';
+import QrCodeScanner from './components/QrCodeScanner';
 import AppBar from './components/AppBar';
+
+const Stack = createStackNavigator()
+
+function AppStack() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown:false,}}>
+        <Stack.Screen name='Home' component={AppContainer} />
+        <Stack.Screen name='QrCodeScanner' component={QrCodeScanner} />
+    </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
+
 
 
 
@@ -30,18 +50,20 @@ export default function App(props) {
     );
   } else {
     return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+      <AppStack />
+      // <View style={styles.container}>
 
-        
+      //   {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
 
-        <FloattingActionButton style={styles.buttonStyle} />
 
-        <AppBar />
 
-        
+      //   <FloattingActionButton style={styles.buttonStyle} />
 
-      </View>
+      //   <AppBar />
+
+
+
+      // </View>
 
     );
   }
@@ -78,8 +100,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  buttonStyle :{
-    //width: '100%',
+  buttonStyle: {
+    // width: '100%',
     // flex: 1,
     // position: 'absolute',
     // bottom: 100,
